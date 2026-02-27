@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qawa Investment Ltd - Premium Beef & Goat Meat Supply & Export</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1F4E78;
+            --secondary: #2E75B6;
+            --accent: #28A745;
+            --light: #F8F9FA;
+            --dark: #2C3E50;
+            --text: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .capacity {
+            font-size: 1.1rem;
+            background: rgba(40, 167, 69, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideUp 0.8s ease;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #20c997;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light);
+            transform: translateY(-3px);
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Capacity Highlight */
+        .capacity-highlight {
+            background: linear-gradient(135deg, var(--accent) 0%, #20c997 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .capacity-highlight h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .capacity-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .capacity-stat {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .capacity-stat .number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .capacity-stat .label {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-left: 5px solid var(--accent);
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .product-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .product-card.goat .product-image {
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-hidden {
+            display: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.2rem;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 250px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🥩</div>
+                <span>Qawa Investment Ltd</span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Premium Beef & Goat Meat Supply</h1>
+            <p>Trusted Source for Quality Meat Products - Local Supply & International Export</p>
+            <div class="capacity">
+                ⭐ 100 Bulls/Week + Premium Goat Meat Capacity
+            </div>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Qawa Investment</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Dual Product Lines</h3>
+                    <p>Premium beef AND quality goat meat from a single trusted supplier</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Massive Capacity</h3>
+                    <p>100 bulls/week plus complementary goat meat supply with reliable delivery</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>International Export</h3>
+                    <p>Export-ready certifications for beef and premium goat meat to regional markets</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Professional Operations</h3>
+                    <p>Vertically integrated operations with 100% facility capacity utilization</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Food Safety</h3>
+                    <p>Licensed facilities with HACCP protocols for both beef and goat meat</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Best value through vertical integration and optimized facility operations</p>
+                </div>
+            </div>
+
+            <!-- Capacity Highlight -->
+            <div class="capacity-highlight">
+                <h2>Expanded Operational Capacity</h2>
+                <div class="capacity-stats">
+                    <div class="capacity-stat">
+                        <div class="number">100+</div>
+                        <div class="label">Bulls Per Week</div>
+                    </div>
+                    <div class="capacity-stat">
+                        <div class="number">100-150</div>
+                        <div class="label">Goats Per Week</div>
+                    </div>
+                    <div class="capacity-stat">
+                        <div class="number">KES 3.4M+</div>
+                        <div class="label">Monthly Profit</div>
+                    </div>
+                    <div class="capacity-stat">
+                        <div class="number">KES 10.2M+</div>
+                        <div class="label">Annual Profit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Qawa Investment Ltd</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Dual Meat Supply Leader</h2>
+                    <p>Qawa Investment Ltd is Kenya's premier integrated meat supply company offering both premium beef and quality goat meat. We source directly from established ranches, process meat at licensed facilities, and deliver to major retailers across Kenya while exporting to regional markets.</p>
+                    <p>Our dual-product strategy with 100 bulls/week capacity plus complementary goat meat supply makes us the unique choice for complete meat supply solutions.</p>
+                    <p>With operations spanning sourcing, processing, quality control, and logistics, we maintain complete control over our supply chain to ensure consistent excellence.</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="badge">✓ 100 Bulls/Week</span>
+                        <span class="badge">✓ Goat Meat Supply</span>
+                        <span class="badge">✓ HACCP Certified</span>
+                        <span class="badge">✓ Export Ready</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    🏭
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>🇰🇪 Local Beef Supply</h3>
+                    <p>Premium beef supply to Carrefour and major retail chains. 100+ bulls/week capacity with consistent quality and reliable delivery.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🐐 Premium Goat Meat</h3>
+                    <p>Quality goat meat for retail, food service, and export. 100-150 goats/week complementing our beef operations.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌍 International Export</h3>
+                    <p>Direct export of beef and goat meat to regional markets. All certifications and documentation handled professionally.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🎯 Custom Orders</h3>
+                    <p>Specialized cuts and bulk orders for restaurants, food service, and institutional buyers. Flexible volumes and specifications.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔄 Byproduct Solutions</h3>
+                    <p>Value-added services from organs, bones, and hides. Maximum waste minimization and additional revenue streams.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💼 Partnership Programs</h3>
+                    <p>Long-term contracts with price guarantees and service level commitments for both beef and goat meat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Bulls Weekly</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100-150</div>
+                    <div class="stat-label">Goats Weekly</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">On-Time Delivery</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Quality Compliance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            
+            <div class="product-tabs">
+                <button class="tab-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="tab-btn" onclick="filterProducts('beef')">Beef</button>
+                <button class="tab-btn" onclick="filterProducts('goat')">Goat Meat</button>
+            </div>
+
+            <div class="product-grid">
+                <!-- Beef Products -->
+                <div class="product-card beef">
+                    <div class="product-image">🥩</div>
+                    <div class="product-info">
+                        <h3>Premium Beef Cuts</h3>
+                        <p>High-quality steaks, roasts, and premium cuts. KES 555/kg - Retail Standard</p>
+                    </div>
+                </div>
+
+                <div class="product-card beef">
+                    <div class="product-image">🍖</div>
+                    <div class="product-info">
+                        <h3>Ground Beef</h3>
+                        <p>Fresh ground beef for retail and food service. KES 500/kg</p>
+                    </div>
+                </div>
+
+                <div class="product-card beef">
+                    <div class="product-image">🥖</div>
+                    <div class="product-info">
+                        <h3>Bulk Beef Orders</h3>
+                        <p>Customized packages for restaurants and food service providers</p>
+                    </div>
+                </div>
+
+                <div class="product-card beef">
+                    <div class="product-image">🌐</div>
+                    <div class="product-info">
+                        <h3>Export Quality Beef</h3>
+                        <p>Premium cuts for international markets. KES 700-900/kg</p>
+                    </div>
+                </div>
+
+                <!-- Goat Meat Products -->
+                <div class="product-card goat">
+                    <div class="product-image">🐐</div>
+                    <div class="product-info">
+                        <h3>Premium Goat Meat</h3>
+                        <p>Quality goat meat cuts for discerning consumers. KES 650-800/kg</p>
+                    </div>
+                </div>
+
+                <div class="product-card goat">
+                    <div class="product-image">🍖</div>
+                    <div class="product-info">
+                        <h3>Ground Goat Meat</h3>
+                        <p>Lean ground goat for kebab and specialty products</p>
+                    </div>
+                </div>
+
+                <div class="product-card goat">
+                    <div class="product-image">🏪</div>
+                    <div class="product-info">
+                        <h3>Goat Meat Specialty</h3>
+                        <p>Premium cuts for restaurants and food service</p>
+                    </div>
+                </div>
+
+                <div class="product-card goat">
+                    <div class="product-image">🌍</div>
+                    <div class="product-info">
+                        <h3>Export Goat Meat</h3>
+                        <p>Premium goat meat for international export markets</p>
+                    </div>
+                </div>
+
+                <!-- Byproducts -->
+                <div class="product-card">
+                    <div class="product-image">♻️</div>
+                    <div class="product-info">
+                        <h3>Beef Byproducts</h3>
+                        <p>Organs, offals, hides from beef. KES 7,500-15,000/bull</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">♻️</div>
+                    <div class="product-info">
+                        <h3>Goat Byproducts</h3>
+                        <p>Value-added goat meat byproducts and hides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p><strong>Email:</strong> info@qawainvestment.com</p>
+                    <p><strong>Phone:</strong> +254 (XXX) XXX XXXX</p>
+                    <p><strong>Address:</strong> Nairobi, Kenya</p>
+                    
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                    <p>Saturday: 9:00 AM - 2:00 PM</p>
+                    <p>Sunday: Closed</p>
+
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" style="color: var(--secondary);">Request Quote</a></li>
+                        <li><a href="#" style="color: var(--secondary);">Schedule Meeting</a></li>
+                        <li><a href="#" style="color: var(--secondary);">Capacity Information</a></li>
+                        <li><a href="#" style="color: var(--secondary);">Certifications</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" placeholder="Your Company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Interested In</label>
+                            <select id="product" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 1rem;" required>
+                                <option>Select Product...</option>
+                                <option>Beef Supply</option>
+                                <option>Goat Meat Supply</option>
+                                <option>Both Products</option>
+                                <option>Export Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Qawa Investment Ltd is Kenya's premier beef and goat meat supplier. With 100+ bulls/week capacity plus premium goat meat supply, we serve major retailers and international markets with consistent quality and reliability.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Beef Supply</a></li>
+                        <li><a href="#services">Goat Meat</a></li>
+                        <li><a href="#services">International Export</a></li>
+                        <li><a href="#services">Supply Chain</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Certifications</h4>
+                    <ul>
+                        <li>✓ Licensed Facilities</li>
+                        <li>✓ HACCP Certified</li>
+                        <li>✓ Food Safety Approved</li>
+                        <li>✓ Export Ready</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Qawa Investment Ltd. All rights reserved. | Premium Beef & Goat Meat Supply</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Product filter
+        function filterProducts(filter) {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (filter === 'all' || card.classList.contains(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update active button
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Button handlers
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.textContent.includes('Get Started')) {
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                } else if (this.textContent.includes('Learn More')) {
+                    document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
